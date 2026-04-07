@@ -33,7 +33,7 @@ statistical_engine/
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 ### 1. Statistical Engine (`StatEngine`)
 - Accepts raw input data (list or tuple)
@@ -69,9 +69,7 @@ Invalid data leads to incorrect statistical results.
 
 ### 🔹 Mean (Average)
 
-\[
-\mu = \frac{\sum_{i=1}^{n} x_i}{n}
-\]
+mean=sum(x_i) / n
 
 ---
 
@@ -95,32 +93,21 @@ Invalid data leads to incorrect statistical results.
 ###  Variance
 
 **Population Variance:**
-\[
-\sigma^2 = \frac{\sum (x_i - \mu)^2}{n}
-\]
+σ^2 = sum((x_i - mean)^2) / n
 
 **Sample Variance (used in this project):**
-\[
-s^2 = \frac{\sum (x_i - \mu)^2}{n - 1}
-\]
-
----
+s^2 = sum((x_i - mean)^2) / (n - 1)
 
 ###  Standard Deviation
-
-\[
-\sigma = \sqrt{\sigma^2}
-\]
+std_dev = sqrt(variance)
 
 ---
 
 ###  Outlier Detection
 
-\[
-|x - \mu| > k \cdot \sigma
-\]
+Outlier if abs(x_i - mean) > k * std_dev
 
-- Default: \( k = 2 \)
+- Default:  k = 2 
 - Values beyond this range are considered outliers
 
  Note: Assumes approximately normal distribution.
@@ -135,10 +122,7 @@ Estimate probability using repeated random sampling.
 
 ### Formula
 
-\[
-P \approx \frac{\text{Number of Crashes}}{\text{Total Days}}
-\]
-
+P ≈ Number of Crashes / Total Days
 ### Process
 
 - For each simulated day:
@@ -146,6 +130,7 @@ P \approx \frac{\text{Number of Crashes}}{\text{Total Days}}
   - If less than crash probability → count as crash
 
 ### Insight
+
 
 - Larger number of simulations → more accurate results
 
